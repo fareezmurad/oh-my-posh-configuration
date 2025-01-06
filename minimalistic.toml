@@ -11,7 +11,7 @@ enable_cursor_positioning = true
   [[blocks.segments]]
     type = 'path'
     style = 'plain'
-    foreground = 'cyan'
+    foreground = 'p:primary'
     background = 'transparent'
     template = '<b>{{ .Path }}</b>'
 
@@ -37,7 +37,7 @@ enable_cursor_positioning = true
   [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
-    foreground = 'magenta'
+    foreground = 'p:accent'
     background = 'transparent'
     template = '{{ .FormattedMs }}'
 
@@ -55,21 +55,23 @@ enable_cursor_positioning = true
     style = 'plain'
     foreground_templates = [
       "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}yellow{{end}}",
+      "{{if eq .Code 0}}p:secondary{{end}}",
     ]
     background = 'transparent'
     template = '<f>❯</f>'
 
 [transient_prompt]
-foreground = 'yellow'
+foreground = 'p:secondary'
 background = 'transparent'
 template = '❯ '
 
 [secondary_prompt]
-  foreground = 'yellow'
+  foreground = 'p:secondary'
   background = 'transparent'
   template = '❯❯ '
 
 [palette]
 mint = '#4e9a06'
-
+primary = 'cyan'
+secondary = 'yellow'
+accent = 'magenta'
